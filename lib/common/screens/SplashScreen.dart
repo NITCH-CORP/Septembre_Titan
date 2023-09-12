@@ -14,7 +14,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(seconds: 3)).then((value) {
+    Future.delayed(const Duration(seconds: 5)).then((value) {
       SharedPreferences.getInstance().then((prefernces) async {
         //await prefernces.remove('login');
         final l = prefernces.getBool('login');
@@ -47,14 +47,19 @@ class SplashScreen extends StatelessWidget {
       });
     });
     return Scaffold(
-        body: Container(
-      child: Column(children: [
-        Image.asset('assets/images/titan.png'),
-        const Spacer(),
-        const Text('By Nitch Corp',
-            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue)),
-        const SizedBox(height: 20)
-      ]),
+        body: SafeArea(
+      child: Container(
+        child: SingleChildScrollView(
+          child: Column(children: [
+            Image.asset('assets/images/titan.png'),
+            //const Spacer(),
+            const Text('By Nitch Corp',
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.blue)),
+            const SizedBox(height: 20)
+          ]),
+        ),
+      ),
     ));
   }
 }
