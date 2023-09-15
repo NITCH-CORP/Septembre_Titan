@@ -49,16 +49,16 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
       child: Container(
-        child: SingleChildScrollView(
-          child: Column(children: [
-            Image.asset('assets/images/titan.png'),
-            //const Spacer(),
-            const Text('By Nitch Corp',
-                style:
-                    TextStyle(fontWeight: FontWeight.bold, color: Colors.blue)),
-            const SizedBox(height: 20)
-          ]),
-        ),
+        child: Column(children: [
+          Expanded(
+              child: Image.asset('assets/images/titan.png')),
+          //const Spacer(),
+
+          const Text('By Nitch Corp',
+              style:
+                  TextStyle(fontWeight: FontWeight.bold, color: Colors.blue)),
+          const SizedBox(height: 20)
+        ]),
       ),
     ));
   }
